@@ -3,6 +3,7 @@
 :root {
   --azul-principal: #75a1b6;
   --laranja: #f9732c;
+  --preto: #333;
 
   --sombra: #00000047;
 
@@ -54,6 +55,7 @@ nav #login {
 }
 
 #container-inicio {
+  min-height: 420px;
   height: 50vh;
   display: flex;
   justify-content: space-between;
@@ -116,21 +118,39 @@ nav #login {
 }
 
 #produtos {
-  padding: 90px 60px;
+  padding: 9vw 6vh;
 }
 
-#container-categoria{
+#container-categoria {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
 }
 
-#container-categoria #categoria{
-  width: 40vw;
+#container-categoria h3 {
+  font-size: 2.2vw;
+}
+
+#container-categoria  #categoria {
+  width: 45vw;
+  font-weight: 500;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+#container-categoria a{
+  text-decoration: none;
+  color: var(--preto);
+}
+
+#container-categoria a:hover{
+  color: var(--laranja);
+}
+
+#container-categoria #pop{
+  color: var(--laranja);
 }
 
 @media screen and (min-width: 992px) {
@@ -139,15 +159,24 @@ nav #login {
   }
 
   #container-inicio {
-    height: 60vh;
+    height: 65vh;
   }
 
-  #apresentacao {
-    font-size: 0.9em;
+  #apresentacao{
+    font-size: 1em;
   }
-
+  
   #container-imagem img {
     width: 40vw;
+    max-width: 500px;
     right: 8%;
+  }
+
+  #container-categoria{
+    font-size: 1em;
+  }
+
+  #container-categoria h3{
+    font-size: 1.5em;
   }
 }
