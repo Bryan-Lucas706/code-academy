@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>catalogo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/media.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
   </head>
-  <body>
+  <body onresize="mudouTamanho()">
     <header>
-      <nav>
+      <menu>
+        <span onclick="clickMenu()"><i class="bi bi-list"></i></span>
+      </menu>
+      <nav id="itensMenu">
         <a href="">Home</a>
         <a href="">About us</a>
         <a href="">Feature</a>
@@ -24,7 +26,7 @@
       </nav>
     </header>
     <main>
-      <section id="container-inicio">
+      <section id="home">
         <div id="apresentacao">
           <p>THERE ARE MANY VARIATIONS</p>
           <h1>
@@ -32,16 +34,19 @@
             BRINGS PERFECT
           </h1>
           <p class="descricao">
-            There are many variations of passages of Lorem Iplum <br />
-            avaible, but the majority have suffered
+            There are many variations of passages of Lorem <br />
+            Iplum avaible, but the majority have suffered
           </p>
           <div id="botoes">
             <a href="" id="buy">BUY NOW</a>
-            <a href="" id="read_more">READ MORE</a>
+            <a href="" id="read-more">READ MORE</a>
           </div>
         </div>
         <div id="container-imagem">
-          <img src="imagens/cadeira-principal.png" alt="" />
+          <img
+            src="imagens/cadeira-principal.png"
+            alt="cadeira azul escuro em exposição"
+          />
         </div>
       </section>
 
@@ -49,7 +54,7 @@
         <div id="container-categoria">
           <h3>PRODUCTS</h3>
           <div id="categoria">
-            <a href="" id="pop">POPULAR PRODUCTS:</a>
+            <span id="pop">POPULAR PRODUCTS:</span>
             <a href="">ALL</a>
             <a href="">SOFA</a>
             <a href="">LAMP LIGHT</a>
@@ -58,11 +63,75 @@
         </div>
 
         <section id="container-produtos">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="item" id="um">
+            <div class="exposicao-produto">
+              <img src="imagens/cadeira-rosa.png" alt="cadeira rosa" />
+            </div>
+            <div class="descricao-produto">
+              <h3>WOMB CHAIR (HSD 3356)</h3>
+              <p>
+                Do you sometimes just want to retire home about the world
+                outside?
+              </p>
+              <div class="preco">
+                <span class="atual">$80</span>
+                <span><s>$99</s></span>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="dois">
+            <div class="exposicao-produto">
+              <img src="imagens/cadeira-azul.png" alt="cadeira azul" />
+            </div>
+            <div class="descricao-produto">
+              <h3>DOUBLE SEATED SODA</h3>
+              <p>
+                His is made from bone meal and white clay and has
+                irregularities.
+              </p>
+              <div class="preco">
+                <span class="atual">$60</span>
+                <span><s>$70</s></span>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="tres">
+            <div class="exposicao-produto">
+              <img src="imagens/cadeira-verde.png" alt="cadeira verde" />
+            </div>
+            <div class="descricao-produto">
+              <h3>SEATED SOFA (HSD 3356)</h3>
+              <p>
+                Are you looking for modern, stylish pendant lamp for your home?
+              </p>
+              <div class="preco">
+                <span class="atual">$50</span>
+                <span><s>$60</s></span>
+              </div>
+            </div>
+          </div>
         </section>
       </section>
     </main>
+    <script>
+      function mudouTamanho() {
+        if (window.innerWidth >= 769) {
+          itensMenu.style.display = "flex";
+        } else {
+          itensMenu.style.display = "none";
+        }
+      }
+
+      function clickMenu() {
+        if (
+          itensMenu.style.display == "flex" ||
+          itensMenu.style.display == "block"
+        ) {
+          itensMenu.style.display = "none";
+        } else {
+          itensMenu.style.display = "flex";
+        }
+      }
+    </script>
   </body>
 </html>
