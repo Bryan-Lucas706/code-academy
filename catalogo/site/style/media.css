@@ -64,6 +64,10 @@
     gap: 15px;
   }
 
+  #apresentacao{
+    font-size: 0.6em;
+  }
+
   #botoes {
     width: 100%;
     justify-content: center;
