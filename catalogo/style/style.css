@@ -216,7 +216,7 @@ nav #login:hover {
 
 #container-produtos .exposicao-produto img{
   width: 100%;
-  filter: drop-shadow(-5px 5px 5px var(--sombra));
+  filter: drop-shadow(-5px 5px 7  px var(--sombra));
 }
 
 #container-produtos .descricao-produto{
