@@ -50,14 +50,14 @@
 
   #home {
     flex-direction: column;
-    height: 600px;
+    height: 550px;
     padding: 30px 20px;
   }
 
   #apresentacao {
     min-width: auto;
     padding: 20px;
-    font-size: 16px;
+    font-size: 0.8em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@
     width: 300px;
     right: auto;
     top: auto;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
   #produtos {
@@ -125,7 +125,7 @@
     grid-column: 1 / -1;
   }
 
-  #container-produtos .item{
+  #container-produtos .item {
     padding: 5vw;
   }
 
