@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(#1ed760, #000);
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.1em;
+  margin: 0px 0px 8vh 0px;
+}
+
+#capa {
+  width: 60vw;
+  max-width: 450px;
+  border: 6px solid white;
+}
+
+#song-name {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+#band-name {
+  font-size: 0.9em;
+  color: #ffffffa8;
+}
+
+#like {
+  color: #ffffffa8;
+}
+
+#barra {
+  background-color: #ffffffa8;
+  height: 3px;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+#progresso{
+  height: inherit /* Herda do "pai" 3px */;
+  background-color: white;
+  width: 50%;
+  border-radius: inherit/* 15px */;
+}
+
+#abaixo-capa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px 15px 0px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /*  margin-bottom: 3.5vh; */
+}
+
+.button {
+  font-size: 1.7em;
+}
+
+#anterior {
+  font-size: 3em;
+}
+
+#proximo {
+  font-size: 3em;
+}
+
+#play {
+  font-size: 4em;
+}
