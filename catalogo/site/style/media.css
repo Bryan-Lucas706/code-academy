@@ -10,7 +10,7 @@
 
 /*Telas menores de 768*/
 /* Media query para telas menores que 769px */
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 720px) {
   menu {
     display: block;
   }

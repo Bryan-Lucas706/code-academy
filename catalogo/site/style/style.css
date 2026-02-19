@@ -69,6 +69,7 @@ nav #login:hover {
 #home {
   min-height: 420px;
   height: 50vh;
+  max-height: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
