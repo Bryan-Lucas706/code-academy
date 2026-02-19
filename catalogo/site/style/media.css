@@ -31,7 +31,7 @@
     left: 0;
     background-color: var(--azul-principal);
     padding: 20px 0;
-    z-index: 1000;
+    z-index: 1;
   }
 
   nav a {
