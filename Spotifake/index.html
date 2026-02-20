@@ -13,19 +13,18 @@
   <body>
     <div id="music-container">
       <h1>Spotifake</h1>
-      <!--<audio src="musicas/this-i-love.mpeg" controls></audio>
-      <audio src="musicas/chop-suey.mpeg" controls></audio>
-      <audio src="musicas/devil-in-i.mpeg" controls></audio>
-      -->
-      <img id="capa" src="capas/capa-mudvayne.jpeg" alt="capa da musica"/>
+
+      <img id="capa" alt="capa da musica"/>
+      <audio id="audio"></audio>
+
       <div id="abaixo-capa">
         <div id="song-info">
           <div id="song-name">Nome da Música</div>
           <div id="band-name">Nome da Banda</div>
         </div>
-        <div id="like" class="button">
+        <button id="like" class="button">
           <i class="bi bi-heart"></i>
-        </div>
+        </button>
       </div>
       
       <div id="barra">
@@ -33,12 +32,11 @@
       </div>
       
       <div id="button-container">
-        <div id="aleatorio" class="button"><i class="bi bi-shuffle"></i></div>
-        <div id="anterior" class="button"><i class="bi bi-skip-start-fill"></i></div>
-        <div id="play" class="button"><i class="bi bi-play-circle-fill"></i></div>
-        <!-- <div id="" class="button"><i class="bi bi-pause-circle-fill"></i></div> -->
-        <div id="proximo" class="button"><i class="bi bi-skip-end-fill"></i></div>
-        <div id="repetir" class="button"><i class="bi bi-repeat"></i></div>
+        <button id="aleatorio" class="button"><i class="bi bi-shuffle"></i></button>
+        <button id="anterior" class="button"><i class="bi bi-skip-start-fill"></i></button>
+        <button id="play" class="button"><i class="bi bi-play-circle-fill"></i></button>
+        <button id="proximo" class="button"><i class="bi bi-skip-end-fill"></i></button>
+        <button id="repetir" class="button"><i class="bi bi-repeat"></i></button>
       </div>
     </div>
     <script src="script.js"></script>
