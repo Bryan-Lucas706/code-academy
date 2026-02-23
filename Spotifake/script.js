@@ -6,6 +6,8 @@ const anterior = document.getElementById("anterior");
 const play = document.getElementById("play");
 const proximo = document.getElementById("proximo");
 const progresso = document.getElementById("progresso");
+const containerProgreso = document.getElementById("progress-container");
+const botaoAletorio = document.getElementById("aleatorio");
 
 const chopSuey = {
   songName: "Chop Suey",
@@ -32,8 +34,10 @@ const thisIlove = {
 };
 
 let isPlaying = false;
+let TaAleatorio = false;
 
-const playlist = [chopSuey, devilInI, dig, thisIlove];
+const originalPlaylist = [chopSuey, devilInI, dig, thisIlove];
+let sortedPlaylist = [...originalPlaylist];
 let index = 0;
 
 function playSong() {
@@ -59,15 +63,15 @@ function playPauseDecider() {
 }
 
 function iniciandoSong() {
-  capa.src = `capas/${playlist[index].file}.jpeg`;
-  song.src = `songs/${playlist[index].file}.mpeg`;
-  songName.innerText = playlist[index].songName;
-  bandName.innerText = playlist[index].bandName;
+  capa.src = `capas/${sortedPlaylist[index].file}.jpeg`;
+  song.src = `songs/${sortedPlaylist[index].file}.mpeg`;
+  songName.innerText = sortedPlaylist[index].songName;
+  bandName.innerText = sortedPlaylist[index].bandName;
 }
 
 function anteriorSong() {
   if (index === 0) {
-    index = playlist.length - 1;
+    index = sortedPlaylist.length - 1;
   } else {
     index = index - 1;
   }
@@ -76,7 +80,7 @@ function anteriorSong() {
 }
 
 function proximoSong() {
-  if (index === playlist.length - 1) {
+  if (index === sortedPlaylist.length - 1) {
     index = 0;
   } else {
     index = index + 1;
@@ -86,8 +90,28 @@ function proximoSong() {
 }
 
 function updadeProgressBar() {
-  const barWidth = (song.currentTime/song.duration)*100;
+  const barWidth = (song.currentTime / song.duration) * 100;
   progresso.style.setProperty("--progress", `${barWidth}%`);
+}
+
+function jumpTo(event) {
+  const width = containerProgreso.clientWidth;
+  const clickPosition = event.offsetX;
+  const jumpToTime = (clickPosition / width) * song.duration;
+  song.currentTime = jumpToTime;
+}
+
+function AleatorioArray(ArrayPreAleatorio) {
+  let size = sortedPlaylist.length;
+  let currentIndex = size - 1;
+  
+}
+
+function botaoAletorioClicado() {
+  if (TaAleatorio === false) {
+    TaAleatorio = true;
+    AleatorioArray();
+  }
 }
 
 iniciandoSong();
@@ -96,3 +120,5 @@ anterior.addEventListener("click", anteriorSong);
 play.addEventListener("click", playPauseDecider);
 proximo.addEventListener("click", proximoSong);
 song.addEventListener("timeupdate", updadeProgressBar);
+containerProgreso.addEventListener("click", jumpTo);
+botaoAletorio.addEventListener("click", botaoAletorioClicado);

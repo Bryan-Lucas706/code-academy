@@ -37,12 +37,16 @@ h1 {
   color: #ffffffa8;
 }
 
+.progress-container{
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
 #barra {
   background-color: #ffffffa8;
   height: 3px;
   width: 100%;
   border-radius: 15px;
-  margin-bottom: 20px;
 }
 
 #progresso{
@@ -71,6 +75,7 @@ button{
   background-color: inherit;
   color: inherit;
   border: none;
+  cursor: pointer;
 }
 
 .button {
