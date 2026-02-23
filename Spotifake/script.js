@@ -5,6 +5,7 @@ const song = document.getElementById("audio");
 const anterior = document.getElementById("anterior");
 const play = document.getElementById("play");
 const proximo = document.getElementById("proximo");
+const progresso = document.getElementById("progresso");
 
 const chopSuey = {
   songName: "Chop Suey",
@@ -84,8 +85,14 @@ function proximoSong() {
   playSong();
 }
 
+function updadeProgressBar() {
+  const barWidth = (song.currentTime/song.duration)*100;
+  progresso.style.setProperty("--progress", `${barWidth}%`);
+}
+
 iniciandoSong();
 
 anterior.addEventListener("click", anteriorSong);
 play.addEventListener("click", playPauseDecider);
 proximo.addEventListener("click", proximoSong);
+song.addEventListener("timeupdate", updadeProgressBar);

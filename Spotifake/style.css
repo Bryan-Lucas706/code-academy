@@ -46,9 +46,10 @@ h1 {
 }
 
 #progresso{
-  height: inherit /* Herda do "pai" 3px */;
+  --progress: 0%;
   background-color: white;
-  width: 50%;
+  height: inherit /* Herda do "pai" 3px */;
+  width: var(--progress);
   border-radius: inherit/* 15px */;
 }
 
