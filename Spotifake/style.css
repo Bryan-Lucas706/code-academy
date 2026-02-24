@@ -46,6 +46,8 @@ h1 {
   height: 3px;
   width: 100%;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
 }
 
 #progresso {
@@ -54,6 +56,13 @@ h1 {
   height: inherit /* Herda do "pai" 3px */;
   width: var(--progress);
   border-radius: inherit /* 15px */;
+}
+
+.bola {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .time-box {
@@ -82,14 +91,11 @@ button {
   color: inherit;
   border: none;
   cursor: pointer;
+  font-size: 1.7em;
 }
 
 .botao-ativado {
   color: #1ed760;
-}
-
-.button {
-  font-size: 1.7em;
 }
 
 #anterior,

@@ -2,6 +2,7 @@ const songName = document.getElementById("song-name");
 const bandName = document.getElementById("band-name");
 const capa = document.getElementById("capa");
 const song = document.getElementById("audio");
+const likeButton = document.getElementById("like");
 const anterior = document.getElementById("anterior");
 const play = document.getElementById("play");
 const proximo = document.getElementById("proximo");
@@ -9,36 +10,41 @@ const progresso = document.getElementById("progresso");
 const containerProgreso = document.getElementById("progress-container");
 const botaoAletorio = document.getElementById("aleatorio");
 const botaoRepetir = document.getElementById("repetir");
+const songTime = document.getElementById("song-time");
+const totalTime = document.getElementById("total-time");
 
 const chopSuey = {
   songName: "Chop Suey",
   bandName: "System of a Down",
   file: "chop-suey",
+  liked: false,
 };
 
 const devilInI = {
   songName: "Devil in I",
   bandName: "Slipknot",
   file: "devil-in-i",
+  liked: false,
 };
 
 const dig = {
   songName: "Dig",
   bandName: "Mudvayne",
   file: "dig",
+  liked: false,
 };
 
 const thisIlove = {
   songName: "This I Love",
   bandName: "Guns N' Roses",
   file: "this-i-love",
+  liked: false,
 };
 
 let isPlaying = false;
 let TaAleatorio = false;
 let TaRepetindo = false;
-
-const originalPlaylist = [chopSuey, devilInI, dig, thisIlove];
+const originalPlaylist = JSON.parse(localStorage.getItem("playlist")) ??  [chopSuey, devilInI, dig, thisIlove];
 let sortedPlaylist = [...originalPlaylist];
 let index = 0;
 
@@ -69,6 +75,31 @@ function iniciandoSong() {
   song.src = `songs/${sortedPlaylist[index].file}.mpeg`;
   songName.innerText = sortedPlaylist[index].songName;
   bandName.innerText = sortedPlaylist[index].bandName;
+  likeButtonRender();
+}
+
+function toHHMMSS(originalNumber) {
+  let hours = Math.floor(originalNumber / 3600);
+  let min = Math.floor((originalNumber - hours * 3600) / 60);
+  let seg = Math.floor(originalNumber - hours * 3600 - min * 60);
+
+  if (originalNumber > 3600) {
+    return `${hours.toString().padStart(2, "0")}:${min.toString().padStart(2, "0")}:${seg.toString().padStart(2, "0")}`;
+  } else {
+    return `${min.toString().padStart(2, "0")}:${seg.toString().padStart(2, "0")}`;
+  }
+}
+
+function updateCurrentTime() {}
+
+function updateTotalTime() {
+  totalTime.innerText = toHHMMSS(song.duration);
+}
+
+function updadeProgress() {
+  const barWidth = (song.currentTime / song.duration) * 100;
+  progresso.style.setProperty("--progress", `${barWidth}%`);
+  songTime.innerText = toHHMMSS(song.currentTime);
 }
 
 function anteriorSong() {
@@ -91,17 +122,34 @@ function proximoSong() {
   playSong();
 }
 
+function likeButtonRender() {
+  if (sortedPlaylist[index].liked === true) {
+    likeButton.querySelector(".bi").classList.remove("bi-heart");
+    likeButton.querySelector(".bi").classList.add("bi-heart-fill");
+    likeButton.classList.add("botao-ativado");
+  } else {
+    likeButton.querySelector(".bi").classList.add("bi-heart");
+    likeButton.querySelector(".bi").classList.remove("bi-heart-fill");
+    likeButton.classList.remove("botao-ativado");
+  }
+}
+
+function buttonLikedClicked() {
+  if (sortedPlaylist[index].liked === false) {
+    sortedPlaylist[index].liked = true;
+  } else {
+    sortedPlaylist[index].liked = false;
+  }
+  likeButtonRender();
+  localStorage.setItem("playlist", JSON.stringify(originalPlaylist));
+}
+
 function nextOrRepeat() {
   if (TaRepetindo === false) {
     proximoSong();
   } else {
     playSong();
   }
-}
-
-function updadeProgressBar() {
-  const barWidth = (song.currentTime / song.duration) * 100;
-  progresso.style.setProperty("--progress", `${barWidth}%`);
 }
 
 function jumpTo(event) {
@@ -150,8 +198,10 @@ iniciandoSong();
 anterior.addEventListener("click", anteriorSong);
 play.addEventListener("click", playPauseDecider);
 proximo.addEventListener("click", proximoSong);
-song.addEventListener("timeupdate", updadeProgressBar);
+song.addEventListener("timeupdate", updadeProgress);
 song.addEventListener("ended", nextOrRepeat);
+song.addEventListener("loadedmetadata", updateTotalTime);
 containerProgreso.addEventListener("click", jumpTo);
 botaoAletorio.addEventListener("click", botaoAletorioClicado);
 botaoRepetir.addEventListener("click", botaoRepetirClicado);
+likeButton.addEventListener("click", buttonLikedClicked);
