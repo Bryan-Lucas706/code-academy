@@ -8,6 +8,7 @@ const proximo = document.getElementById("proximo");
 const progresso = document.getElementById("progresso");
 const containerProgreso = document.getElementById("progress-container");
 const botaoAletorio = document.getElementById("aleatorio");
+const botaoRepetir = document.getElementById("repetir");
 
 const chopSuey = {
   songName: "Chop Suey",
@@ -35,6 +36,7 @@ const thisIlove = {
 
 let isPlaying = false;
 let TaAleatorio = false;
+let TaRepetindo = false;
 
 const originalPlaylist = [chopSuey, devilInI, dig, thisIlove];
 let sortedPlaylist = [...originalPlaylist];
@@ -89,6 +91,14 @@ function proximoSong() {
   playSong();
 }
 
+function nextOrRepeat() {
+  if (TaRepetindo === false) {
+    proximoSong();
+  } else {
+    playSong();
+  }
+}
+
 function updadeProgressBar() {
   const barWidth = (song.currentTime / song.duration) * 100;
   progresso.style.setProperty("--progress", `${barWidth}%`);
@@ -102,15 +112,36 @@ function jumpTo(event) {
 }
 
 function AleatorioArray(ArrayPreAleatorio) {
-  let size = sortedPlaylist.length;
+  const size = ArrayPreAleatorio.length;
   let currentIndex = size - 1;
-  
+  while (currentIndex > 0) {
+    let ramdomIndex = Math.floor(Math.random() * size);
+    let aux = ArrayPreAleatorio[currentIndex];
+    ArrayPreAleatorio[currentIndex] = ArrayPreAleatorio[ramdomIndex];
+    ArrayPreAleatorio[ramdomIndex] = aux;
+    currentIndex -= 1;
+  }
 }
 
 function botaoAletorioClicado() {
   if (TaAleatorio === false) {
     TaAleatorio = true;
-    AleatorioArray();
+    AleatorioArray(sortedPlaylist);
+    botaoAletorio.classList.add("botao-ativado");
+  } else {
+    TaAleatorio = false;
+    sortedPlaylist = [...originalPlaylist];
+    botaoAletorio.classList.remove("botao-ativado");
+  }
+}
+
+function botaoRepetirClicado() {
+  if (TaRepetindo === false) {
+    TaRepetindo = true;
+    botaoRepetir.classList.add("botao-ativado");
+  } else {
+    TaRepetindo = false;
+    botaoRepetir.classList.remove("botao-ativado");
   }
 }
 
@@ -120,5 +151,7 @@ anterior.addEventListener("click", anteriorSong);
 play.addEventListener("click", playPauseDecider);
 proximo.addEventListener("click", proximoSong);
 song.addEventListener("timeupdate", updadeProgressBar);
+song.addEventListener("ended", nextOrRepeat);
 containerProgreso.addEventListener("click", jumpTo);
 botaoAletorio.addEventListener("click", botaoAletorioClicado);
+botaoRepetir.addEventListener("click", botaoRepetirClicado);

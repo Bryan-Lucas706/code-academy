@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <div id="music-container">
+    <main class="music-container">
       <h1>Spotifake</h1>
 
       <img id="capa" alt="capa da musica"/>
@@ -27,11 +27,15 @@
         </button>
       </div>
       
-      <div class="progress-container" id="progress-container">
+      <section class="progress-container" id="progress-container">
         <div id="barra">
           <div id="progresso"></div>
         </div>
-      </div>
+        <div class="time-box">
+          <div id="song-time">00:00</div>
+          <div id="total-time">00:00</div>
+        </div>
+      </section>
       
       <div id="button-container">
         <button id="aleatorio" class="button"><i class="bi bi-shuffle"></i></button>
@@ -40,7 +44,7 @@
         <button id="proximo" class="button"><i class="bi bi-skip-end-fill"></i></button>
         <button id="repetir" class="button"><i class="bi bi-repeat"></i></button>
       </div>
-    </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
