@@ -1,0 +1,93 @@
+:root{
+    --texto-principal: black;
+    --texto-claro: #8D8D8D;
+    --fundo-principal: white;
+    --fundo-secundario:#F2F2F2;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    display: block;
+}
+
+header{
+    background-color: var(--fundo-principal);
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header i{
+    font-size: 1.1em;
+
+}
+
+#menu{
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+header #pesquisa{
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pesquisa #barra-pesquisa{
+    width: 90%;
+    display: flex;
+    background-color: var(--fundo-secundario);
+    border-radius: 20px;
+    justify-content: center;
+}
+
+#pesquisa #barra-pesquisa input{
+    width: 90%;
+    border-radius: 20px 0px 0px 20px;
+    border: 1px solid var(--texto-claro);
+    padding-left: 5px;
+}
+
+#pesquisa #barra-pesquisa button{
+    width: 10%;
+    padding: 5px;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px solid var(--texto-claro);
+    border-left: none;
+    background-color: var(--fundo-secundario);
+}
+
+#pesquisa #mic{
+    background-color: var(--fundo-secundario);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+header #perfil{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header #perfil img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
