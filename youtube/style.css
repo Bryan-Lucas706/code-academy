@@ -9,6 +9,15 @@
   --hover: #d9d9d9;
 }
 
+body.escuro {
+  --texto-principal: #F1F1F1;
+  --texto-claro: #8f8f8f;
+  --borda: #303030;
+  --fundo-principal: #0F0F0F;
+  --fundo-secundario: #222222;
+  --hover: #3F3F3F;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -33,6 +42,7 @@ header {
 }
 
 header i {
+  color: var(--texto-principal);
   font-size: 1.4em;
 }
 
@@ -68,6 +78,7 @@ header #pesquisa {
   border-radius: 20px 0px 0px 20px;
   border: 1px solid var(--borda);
   padding-left: 10px;
+  background-color: var(--fundo-principal);
 }
 
 #barra-pesquisa button {
@@ -120,7 +131,7 @@ nav#nav-lateral {
   padding: 3px;
 }
 
-  #nav div {
+#nav div {
   width: 60px;
   height: 70px;
   border-radius: 10px;
@@ -138,6 +149,7 @@ nav#nav-lateral {
 
 nav i {
   font-size: 1.7em;
+  color: var(--texto-principal);
 }
 
 nav img {
@@ -146,11 +158,11 @@ nav img {
 
 main {
   margin: 56px 0px 0px 64px;
-  height: 93.5vh;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 1fr 1fr 50px 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 50px 1fr 2fr 2fr;
   row-gap: 20px;
+  background-color: var(--fundo-principal);
 }
 
 main img {
@@ -280,6 +292,13 @@ a {
   grid-column: 2 / -2;
 
   padding-bottom: 30px;
+  background-color: var(--fundo-principal);
+}
+
+#playlist2 {
+  grid-row: 6 / -1;
+  grid-column: 2 / -2;
+  background-color: var(--fundo-principal);
 }
 
 .nome-playlist {
@@ -301,7 +320,7 @@ a {
   gap: 5px;
 }
 
-.nome-playlist div span{
+.nome-playlist div span {
   color: var(--texto-principal);
 }
 
@@ -337,9 +356,5 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-#playlist2{
-  grid-row: 6 / -1;
-  grid-column: 2 / -2;
+  color: var(--texto-principal);
 }

@@ -12,12 +12,11 @@
     />
   </head>
   <body>
-    <!-- <i class="fa-solid fa-moon"></i> -->
     <header>
       <div id="menu">
         <i class="fa-solid fa-bars"></i>
         <a href="https://youtube.com" target="_blank"
-          ><img src="image/Youtube-Logo.png" alt="Logo do Youtube" width="80"
+          ><img src="image/Youtube-Logo.png" alt="Logo do Youtube" width="80" id="youtube"
         /></a>
       </div>
       <div id="pesquisa">
@@ -30,6 +29,7 @@
         <div id="mic"><i class="fa-solid fa-microphone"></i></div>
       </div>
       <div id="perfil">
+        <i id="botao-tema"></i>
         <i class="fa-solid fa-video"></i>
         <i class="fa-solid fa-grip"></i>
         <i class="fa-regular fa-bell"></i>
@@ -43,11 +43,11 @@
     <nav id="nav-lateral">
       <div id="nav">
         <div><i class="fa-solid fa-house"></i><span>Home</span></div>
-        <div><img src="image/shorts.png" alt="" /><span>Shorts</span></div>
+        <div><img src="image/shorts.png" alt="" id="shorts"/><span>Shorts</span></div>
         <div>
-          <img src="image/subscribe.png" alt="" /><span>Subscriptions</span>
+          <img src="image/subscribe.png" alt="" id="subscribe"/><span>Subscriptions</span>
         </div>
-        <div><img src="image/library.png" alt="" /><span>Library</span></div>
+        <div><img src="image/library.png" alt="" id="library"/><span>Library</span></div>
       </div>
     </nav>
     <main>
@@ -423,5 +423,6 @@
         </section>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
