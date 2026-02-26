@@ -13,7 +13,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:  "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 img {
@@ -152,9 +152,8 @@ nav img {
 main {
   margin: 56px 0px 0px 64px;
   height: 93.5vh;
-  width: 92.1vw;
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: 60px 1fr 60px;
   grid-template-rows: 1fr 1fr 50px 1fr 1fr 1fr;
   row-gap: 20px;
 }
@@ -246,12 +245,13 @@ main #container-canal {
 
 #video-destaque iframe {
   display: block;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 #video-destaque .info {
   margin-left: 30px;
-  width: 50%;
+  max-width: 500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -263,7 +263,9 @@ main #container-canal {
   font-weight: normal;
 }
 
-.info > span,p,a {
+span,
+p,
+a {
   text-decoration: none;
   color: var(--texto-claro);
 }
@@ -284,11 +286,11 @@ main #container-canal {
   padding-bottom: 30px;
 }
 
-.nome-playlist{
+.nome-playlist {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 60%;
+  width: 600px;
   gap: 5px;
 }
 
@@ -296,7 +298,7 @@ main #container-canal {
   font-size: 1.3em;
 }
 
-.nome-playlist > div{
+.nome-playlist > div {
   padding: 8px 20px;
   border-radius: 30px;
   display: flex;
@@ -304,13 +306,36 @@ main #container-canal {
   gap: 5px;
 }
 
-.nome-playlist > div:hover{
+.nome-playlist > div:hover {
   cursor: pointer;
   background-color: var(--hover);
 }
 
-.nome-playlist > div i{
+.nome-playlist > div i {
   font-size: 1.4em;
   color: var(--texto-principal);
 }
 
+.container-videos {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.video {
+  width: 210px;
+  font-size: 0.8em;
+}
+
+.video iframe {
+  width: 100%;
+  height: 118px;
+  border-radius: 10px;
+}
+
+.video .nome-video {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
