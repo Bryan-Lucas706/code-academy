@@ -293,6 +293,7 @@ a {
 
   padding-bottom: 30px;
   background-color: var(--fundo-principal);
+  border-bottom: 1px solid var(--hover);
 }
 
 #playlist2 {
@@ -317,6 +318,8 @@ a {
 .nome-playlist div {
   padding: 8px 20px;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
   gap: 5px;
 }
 
