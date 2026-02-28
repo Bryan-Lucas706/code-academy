@@ -10,12 +10,12 @@
 }
 
 body.escuro {
-  --texto-principal: #F1F1F1;
+  --texto-principal: #f1f1f1;
   --texto-claro: #8f8f8f;
   --borda: #303030;
-  --fundo-principal: #0F0F0F;
+  --fundo-principal: #0f0f0f;
   --fundo-secundario: #222222;
-  --hover: #3F3F3F;
+  --hover: #3f3f3f;
 }
 
 * {
@@ -36,7 +36,7 @@ header {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -51,6 +51,7 @@ header i:hover {
 }
 
 #menu {
+  display: none;
   width: 120px;
   display: flex;
   align-items: center;
@@ -64,7 +65,7 @@ header #pesquisa {
   align-items: center;
 }
 
-#pesquisa #barra-pesquisa {
+#pesquisa #barra {
   width: 90%;
   display: flex;
   background-color: var(--fundo-secundario);
@@ -72,7 +73,7 @@ header #pesquisa {
   justify-content: center;
 }
 
-#pesquisa #barra-pesquisa input {
+#pesquisa #barra input {
   height: 40px;
   width: 100%;
   border-radius: 20px 0px 0px 20px;
@@ -81,7 +82,7 @@ header #pesquisa {
   background-color: var(--fundo-principal);
 }
 
-#barra-pesquisa button {
+#barra button {
   width: 50px;
   padding: 5px;
   border-radius: 0px 20px 20px 0px;
@@ -90,7 +91,7 @@ header #pesquisa {
   background-color: var(--fundo-secundario);
 }
 
-#barra-pesquisa button:hover {
+#barra button:hover {
   background-color: var(--hover);
 }
 
@@ -126,6 +127,7 @@ nav#nav-lateral {
   background-color: var(--fundo-principal);
   height: 100%;
   position: fixed;
+  display: block;
   top: 56px;
   font-size: 0.6em;
   padding: 3px;
@@ -306,7 +308,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 600px;
+  max-width: 100%;
   gap: 10px;
 }
 
@@ -347,6 +349,14 @@ a {
 .video {
   width: 226px;
   font-size: 0.8em;
+}
+
+#playlist1 .video:last-child {
+  display: block;
+}
+
+#playlist2 .video:last-child {
+  display: block;
 }
 
 .video iframe {

@@ -1,0 +1,85 @@
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+} */
+
+@media screen and (max-width: 963px) {
+  header {
+    font-size: 0.8em;
+  }
+
+  #pesquisa #barra input {
+    height: 32px;
+  }
+
+  #pesquisa #mic {
+    width: 30px;
+    height: 30px;
+  }
+
+  nav#nav-lateral {
+    display: none;
+    top: 48px;
+  }
+
+  /* nav#nav-lateral .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  nav#nav-lateral .fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+  } */
+
+  main {
+    margin: 48px 0px 0px 0px;
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  #container-canal,
+  #video-destaque,
+  .nome-playlist {
+    font-size: 0.8em;
+  }
+
+  .container-videos {
+    gap: 7px;
+  }
+
+  .video {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 157px;
+  }
+
+  #playlist1 .video:last-child {
+    display: none;
+  }
+
+  #playlist2 .video:last-child {
+    display: none;
+  }
+}
