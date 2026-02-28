@@ -160,7 +160,7 @@ main {
   margin: 56px 0px 0px 64px;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 1fr 1fr 50px 1fr 2fr 2fr;
+  grid-template-rows: 200px 180px 50px 150px 1fr 1fr;
   row-gap: 20px;
   background-color: var(--fundo-principal);
 }
