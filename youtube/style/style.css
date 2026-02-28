@@ -243,6 +243,22 @@ main #container-canal {
   border-bottom: 2px solid var(--texto-principal);
 }
 
+span,
+p,
+a {
+  text-decoration: none;
+  color: var(--texto-claro);
+}
+
+.verificado::after {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.8em;
+  color: inherit;
+  margin-left: 6px;
+}
+
 #video-destaque {
   grid-row: 4 / 5;
   grid-column: 2 / -2;
@@ -267,26 +283,16 @@ main #container-canal {
   font-size: 0.8em;
 }
 
+.foto-perfil {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 .info h1 {
   font-size: 1.7em;
   font-weight: normal;
   color: var(--texto-principal);
-}
-
-span,
-p,
-a {
-  text-decoration: none;
-  color: var(--texto-claro);
-}
-
-.verificado::after {
-  content: "\f058";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 0.8em;
-  color: inherit;
-  margin-left: 6px;
 }
 
 #playlist1 {
@@ -305,6 +311,8 @@ a {
 }
 
 .nome-playlist {
+  min-width: 500px;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -343,12 +351,22 @@ a {
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 7px;
 }
 
 .video {
   width: 226px;
   font-size: 0.8em;
+}
+
+.info-video{
+  padding-top: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.info-video img {
+  display: none;
 }
 
 #playlist1 .video:last-child {
@@ -366,8 +384,12 @@ a {
 }
 
 .video .nome-video {
+  padding-top: 5px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: var(--texto-principal);
+}
+
+.video .nome-video i{
+  font-size: 1.3em;
 }

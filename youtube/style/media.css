@@ -61,10 +61,6 @@
     font-size: 0.8em;
   }
 
-  .container-videos {
-    gap: 7px;
-  }
-
   .video {
     width: 100%;
     max-width: 280px;
@@ -81,5 +77,21 @@
 
   #playlist2 .video:last-child {
     display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  nav#nav-lateral {
+    position: fixed;
+    height: fit-content;
+    width: 100%;
+    top: unset;
+    bottom: 0;
+  }
+
+  #nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

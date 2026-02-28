@@ -38,7 +38,7 @@
   // pesquisa lateral
 
   function mudouTamanho() {
-    if (window.innerWidth >= 963) {
+    if (window.innerWidth >= 963 || window.innerWidth <= 620) {
       navLateral.style.display = "block";
     } else {
       navLateral.style.display = "none";
@@ -46,7 +46,7 @@
   }
 
   function clickMenu() {
-    if (window.innerWidth <= 963)
+    if (window.innerWidth <= 963 )
       if (navLateral.style.display == "block") {
         navLateral.style.display = "none";
 //        navLateral.classList.remove("fadeIn");
