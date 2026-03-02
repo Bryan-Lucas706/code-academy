@@ -65,14 +65,6 @@ function clickMenu() {
     }
 }
 
-function TrocarItems() {
-  if (window.innerWidth <= 630) {
-    pesquisa.style.width = "1000px";
-  } else {
-    pesquisa.style.width = "100000px";
-  }
-}
-
 let inscrito = false;
 
 function inscreverSe() {
