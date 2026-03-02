@@ -135,7 +135,7 @@ nav#nav-lateral {
 
 #nav div {
   width: 60px;
-  height: 70px;
+  padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -162,7 +162,7 @@ main {
   margin: 56px 0px 0px 64px;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 200px 180px 50px 150px 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
   row-gap: 20px;
   background-color: var(--fundo-principal);
 }
@@ -183,7 +183,7 @@ main #container-canal {
 }
 
 #canal {
-  display: flex;
+  display: inherit;
   align-items: center;
 }
 
@@ -221,6 +221,7 @@ main #container-canal {
 }
 
 #nav-canal {
+  height: 50px;
   grid-row: 3 / 4;
   grid-column: 2 / -2;
   display: flex;
@@ -284,12 +285,14 @@ a {
 }
 
 .foto-perfil {
-  width: 30px;
-  height: 30px;
+  display: none;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
-.info h1 {
+.info h2 {
   font-size: 1.7em;
   font-weight: normal;
   color: var(--texto-principal);
@@ -310,8 +313,12 @@ a {
   background-color: var(--fundo-principal);
 }
 
+#playlists{
+  color: var(--texto-principal);
+  padding: 30px 0px;
+}
+
 .nome-playlist {
-  min-width: 500px;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -355,26 +362,9 @@ a {
 }
 
 .video {
-  width: 226px;
+  width: 100%;
+  max-width: 226px;
   font-size: 0.8em;
-}
-
-.info-video{
-  padding-top: 5px;
-  display: flex;
-  gap: 5px;
-}
-
-.info-video img {
-  display: none;
-}
-
-#playlist1 .video:last-child {
-  display: block;
-}
-
-#playlist2 .video:last-child {
-  display: block;
 }
 
 .video iframe {
@@ -383,13 +373,28 @@ a {
   border-radius: 10px;
 }
 
-.video .nome-video {
-  padding-top: 5px;
+.info-video{
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-video {
+  width: 100%;
+  padding: 5px 0px;
   display: flex;
   justify-content: space-between;
   color: var(--texto-principal);
 }
 
-.video .nome-video i{
+.video .nome-video i {
+  padding-left: 5px;
   font-size: 1.3em;
+}
+
+#playlist1 .video:last-child {
+  display: block;
+}
+
+#playlist2 .video:last-child {
+  display: block;
 }

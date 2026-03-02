@@ -89,20 +89,127 @@
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 630px) {
   nav#nav-lateral {
+    display: block;
     position: fixed;
     height: fit-content;
     width: 100%;
     top: unset;
     bottom: 0;
 
-    border-top: 2px solid var(--fundo-secundario);
+    border-top: 1px solid var(--borda);
   }
 
   #nav {
     display: flex;
     justify-content: center;
-    align-items: center;
+  }
+
+  #nav div {
+    padding: 5px;
+  }
+
+  main {
+    padding: 0px 15px;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    margin: 56px 0 0 0;
+  }
+
+  main #container-canal {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 280px;
+  }
+
+  #canal {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  #canal img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #canal span {
+    display: none;
+  }
+
+  #canal::after {
+    content: "💻 O Curso em Vídeo é um dos maiores canais educacionais do YouTube na área de programação! Criado pelo professor Gustavo Guanabara, oferece cursos gratuitos em formato de videoaulas para quem quer aprender tecnologia do zero.";
+  }
+
+  #container-canal button {
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  #nav-canal,
+  #video-destaque,
+  #playlist1,
+  #playlist2 {
+    border: none;
+  }
+
+  #nav-canal i,
+  #nav-canal a:nth-last-child(-n + 3) {
+    display: none;
+  }
+
+  #video-destaque {
+    height: 330px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #video-destaque .info {
+    font-size: 1em;
+    margin-left: 0px;
+  }
+
+  #video-destaque iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  #video-destaque p {
+    display: none;
+  }
+
+  .video > img {
+    display: block;
+  }
+
+  .video {
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+    display: flex;
+  }
+
+  .video iframe {
+    width: 210px;
+    height: 118px;
+  }
+
+  #playlist1 {
+    flex-direction: column;
+  }
+
+  #playlist2 {
+    flex-direction: column;
+  }
+
+  .nome-playlist {
+    font-size: 0.7em;
+    width: 100%;
+  }
+
+  .foto-perfil {
+    display: block;
   }
 }
