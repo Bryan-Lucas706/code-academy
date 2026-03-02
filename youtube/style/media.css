@@ -103,18 +103,31 @@
 
   #nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #nav div {
-    padding: 5px;
+    height: 100%;
+    padding: 0px;
+    font-size: 1.3em;
+  }
+
+  nav img {
+    width: 32px;
+  }
+  
+  nav #plus-circle {
+    text-align: center;
+    display: block;
+    font-size: 2em;
   }
 
   main {
     padding: 0px 15px;
     grid-template-columns: 1fr;
     gap: 0px;
-    margin: 56px 0 0 0;
+    margin: 48px 0 0 0;
   }
 
   main #container-canal {
@@ -155,6 +168,10 @@
     border: none;
   }
 
+  #nav-canal a {
+    font-size: 0.9em;
+  }
+
   #nav-canal i,
   #nav-canal a:nth-last-child(-n + 3) {
     display: none;
@@ -164,14 +181,16 @@
     height: 330px;
     flex-direction: column;
     gap: 15px;
+    font-size: 0.8em;
   }
 
   #video-destaque .info {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-left: 0px;
   }
 
   #video-destaque iframe {
+    max-width: 441px;
     width: 100%;
     height: 100%;
   }
@@ -192,8 +211,8 @@
   }
 
   .video iframe {
-    width: 210px;
-    height: 118px;
+    width: 180px;
+    height: 101px;
   }
 
   #playlist1 {
@@ -202,11 +221,12 @@
 
   #playlist2 {
     flex-direction: column;
+    margin-bottom: 50px;
   }
 
   .nome-playlist {
     font-size: 0.7em;
-    width: 100%;
+    width: 90%;
   }
 
   .foto-perfil {

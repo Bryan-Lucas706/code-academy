@@ -50,7 +50,7 @@ header i:hover {
   cursor: pointer;
 }
 
-#menu {
+#container-menu {
   display: none;
   width: 120px;
   display: flex;
@@ -135,7 +135,7 @@ nav#nav-lateral {
 
 #nav div {
   width: 60px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -152,6 +152,10 @@ nav#nav-lateral {
 nav i {
   font-size: 1.7em;
   color: var(--texto-principal);
+}
+
+nav #plus-circle{
+  display: none;
 }
 
 nav img {
@@ -185,6 +189,7 @@ main #container-canal {
 #canal {
   display: inherit;
   align-items: center;
+  color: var(--texto-principal);
 }
 
 #canal img {
@@ -214,6 +219,11 @@ main #container-canal {
   color: var(--fundo-principal);
   border-radius: 30px;
   border: none;
+}
+
+#container-canal button .inscrito{
+  background-color: var(--fundo-secundario);
+  color: var(--texto-principal)
 }
 
 #container-canal button:hover {
@@ -298,6 +308,13 @@ a {
   color: var(--texto-principal);
 }
 
+.container-videos {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
 #playlist1 {
   grid-row: 5 / 6;
   grid-column: 2 / -2;
@@ -352,13 +369,6 @@ a {
 .nome-playlist > div i {
   font-size: 1.4em;
   color: var(--texto-principal);
-}
-
-.container-videos {
-  padding-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
 }
 
 .video {
