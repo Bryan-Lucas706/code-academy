@@ -60,6 +60,14 @@ img {
   display: block;
 }
 
+.items-phone {
+  display: none !important;
+}
+
+.items-desktop{
+  display: block;
+}
+
 header {
   background-color: var(--fundo-principal);
   padding: 8px;
@@ -165,6 +173,7 @@ nav#nav-lateral {
 }
 
 #nav div {
+  position: relative;
   width: 60px;
   padding: 10px;
   border-radius: 10px;
@@ -419,7 +428,6 @@ a {
   transition: all 0.4s 0.1s;
   transform: scale(1.1);
   box-shadow: 0px 0px 5px white;
-  opacity: 0.8;
 }
 
 .info-video {

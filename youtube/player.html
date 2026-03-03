@@ -6,22 +6,36 @@
     <title>Document</title>
   </head>
   <body>
-    <iframe
-      id="ytplayer"
+    <video
+      id="videoplayer"
       width="800"
       height="450"
-      frameborder="0"
-      allow="autoplay"
-      allowfullscreen
+      controls
+      autoplay
+      muted
+      style="
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
     >
-    </iframe>
+      <source src="" type="video/mp4" />
+      Seu navegador não suporta a tag de vídeo.
+    </video>
 
     <script>
       const params = new URLSearchParams(window.location.search);
-      const id = params.get("video");
+      const videoId = params.get("video");
 
-      document.getElementById("ytplayer").src =
-        `https://www.youtube.com/embed/${id}?autoplay=1&mute=1`;
+      // Procura o vídeo em videos/NOME_DO_VIDEO.mp4
+      const videoSource = `videos/${videoId}.mp4`;
+
+      const videoElement = document.getElementById("videoplayer");
+      const sourceElement = videoElement.querySelector("source");
+
+      sourceElement.src = videoSource;
+      videoElement.load();
     </script>
   </body>
 </html>

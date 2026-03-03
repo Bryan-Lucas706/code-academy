@@ -57,6 +57,14 @@
 }
 
 @media screen and (max-width: 630px) {
+  .items-phone {
+    display: block !important;
+  }
+
+  .items-desktop {
+    display: none !important;
+  }
+
   #container-menu {
     width: 150px;
   }
@@ -104,7 +112,7 @@
     padding: 0px 15px;
     grid-template-columns: 1fr;
     gap: 0px;
-    margin: 42px 0 0 0;
+    margin: 41px 0 0 0;
   }
 
   main #container-canal {
