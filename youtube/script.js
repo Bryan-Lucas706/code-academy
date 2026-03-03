@@ -1,10 +1,6 @@
 const body = document.body;
 const menu = document.getElementById("menu");
 const youtube = document.getElementById("youtube");
-const pesquisa = document.getElementById("pesquisa");
-const conectar = document.getElementById("conectar");
-const lupa = document.getElementById("lupa");
-const tresPontos = document.getElementById("3-pontos");
 const botao = document.getElementById("botao-tema");
 const shorts = document.getElementById("shorts");
 const subscribe = document.getElementById("subscribe");
@@ -55,31 +51,73 @@ function clickMenu() {
   if (window.innerWidth <= 963 && window.innerWidth >= 630)
     if (navLateral.style.display == "block") {
       navLateral.style.display = "none";
-
-      //        navLateral.classList.remove("fadeIn");
-      //        navLateral.classList.add("fadeOut");
     } else {
       navLateral.style.display = "block";
-      //        navLateral.classList.remove("fadeOut");
-      //        navLateral.classList.add("fadeIn");
     }
 }
 
 let inscrito = false;
 
+if (localStorage.getItem("inscrito") === "true") {
+  inscrito = true;
+  inscrevaSe.classList.add("inscrito");
+  inscrevaSe.innerHTML = '<i class="fa-solid fa-bell"></i> Inscrito';
+}
+
 function inscreverSe() {
   if (inscrito === false) {
     inscrito = true;
     inscrevaSe.classList.add("inscrito");
-    inscrevaSe.innerText = "Inscrito";
+    inscrevaSe.innerHTML = '<i class="fa-solid fa-bell"></i> Inscrito';
+    localStorage.setItem("inscrito", "true");
   } else {
     inscrito = false;
     inscrevaSe.classList.remove("inscrito");
     inscrevaSe.innerText = "Inscrever-se";
+    localStorage.setItem("inscrito", "false");
   }
 }
 
-menu.addEventListener("click", clickMenu);
+const pesquisa = document.getElementById("pesquisa");
+const transmitir = document.getElementById("transmitir");
+const lupa = document.getElementById("lupa");
+const tresPontos = document.getElementById("3-pontos");
+const fotoPerfil = document.getElementById("foto-perfil");
+
+const htmlOriginal = {
+  menu: menu.outerHTML,
+  youtube: youtube.outerHTML,
+  transmitir: transmitir.outerHTML,
+  lupa: lupa.outerHTML,
+  tresPontos: tresPontos.outerHTML,
+  pesquisa: pesquisa.outerHTML,
+  fotoPerfil: fotoPerfil.outerHTML,
+};
+
+function TrocarItems() {
+  while(window.innerWidth <= 630){}
+  if (window.innerWidth <= 630) {
+    menu.outerHTML = '<i class="fa-solid fa-angle-left"></i>';
+    youtube.outerHTML = '<h1 id="nome-canal">Curso em video</h1>';
+    transmitir.outerHTML = '<i class="fa-brands fa-chromecast"></i>';
+    lupa.outerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+    tresPontos.outerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
+    pesquisa.remove();
+    fotoPerfil.remove();
+  } else {
+    menu.outerHTML = htmlOriginal.menu;
+    youtube.outerHTML = htmlOriginal.youtube;
+    transmitir.outerHTML = htmlOriginal.transmitir;
+    lupa.outerHTML = htmlOriginal.lupa;
+    tresPontos.outerHTML = htmlOriginal.tresPontos;
+    pesquisa.add();
+    fotoPerfil.add();
+  }
+  menu = document.getElementById("menu");
+
+}
+
+window.addEventListener("resize", TrocarItems);
 window.addEventListener("resize", mudouTamanho);
 inscrevaSe.addEventListener("click", inscreverSe);
-window.addEventListener("resize", TrocarItems);
+menu.addEventListener("click", clickMenu);

@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@keyframes inscreva-se {
+  from {
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+  }
+  to {
+    background-color: var(--texto-principal);
+    color: var(--fundo-secundario);
+  }
+}
+
+@keyframes inscrito {
+  from {
+    background-color: var(--texto-principal);
+    color: var(--fundo-principal);
+  }
+  to {
+    background-color: var(--fundo-secundario);
+    color: var(--texto-principal);
+  }
+}
+
 :root {
   --texto-principal: black;
   --texto-claro: #606060;
@@ -7,6 +29,11 @@
   --fundo-principal: white;
   --fundo-secundario: #f2f2f2;
   --hover: #d9d9d9;
+}
+
+main,section, article, header, nav {
+  transition: background-color 0.3s;
+  background-color: var(--fundo-principal);
 }
 
 body.escuro {
@@ -154,7 +181,7 @@ nav i {
   color: var(--texto-principal);
 }
 
-nav #plus-circle{
+nav #plus-circle {
   display: none;
 }
 
@@ -219,11 +246,16 @@ main #container-canal {
   color: var(--fundo-principal);
   border-radius: 30px;
   border: none;
+
+  animation-name: inscreva-se;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 
-#container-canal button .inscrito{
-  background-color: var(--fundo-secundario);
-  color: var(--texto-principal)
+#container-canal button.inscrito {
+  animation-name: inscrito;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 #container-canal button:hover {
@@ -330,7 +362,7 @@ a {
   background-color: var(--fundo-principal);
 }
 
-#playlists{
+#playlists {
   color: var(--texto-principal);
   padding: 30px 0px;
 }
@@ -383,7 +415,7 @@ a {
   border-radius: 10px;
 }
 
-.info-video{
+.info-video {
   display: flex;
   flex-direction: column;
 }

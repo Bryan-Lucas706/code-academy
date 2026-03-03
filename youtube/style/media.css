@@ -7,29 +7,6 @@
   --hover: #d9d9d9;
 }
 
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-
-  to {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-} */
-
 @media screen and (max-width: 963px) {
   header {
     font-size: 0.8em;
@@ -48,16 +25,6 @@
     display: none;
     top: 48px;
   }
-
-  /* nav#nav-lateral .fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
-  }
-
-  nav#nav-lateral .fadeOut {
-    animation-name: fadeOut;
-    animation-duration: 0.5s;
-  } */
 
   main {
     margin: 48px 0px 0px 0px;
@@ -90,6 +57,15 @@
 }
 
 @media screen and (max-width: 630px) {
+  #container-menu {
+    width: 150px;
+  }
+
+  #nome-canal {
+    font-size: 1.3em;
+    color: var(--texto-principal);
+  }
+
   nav#nav-lateral {
     display: block;
     position: fixed;
@@ -116,7 +92,7 @@
   nav img {
     width: 32px;
   }
-  
+
   nav #plus-circle {
     text-align: center;
     display: block;
@@ -127,7 +103,7 @@
     padding: 0px 15px;
     grid-template-columns: 1fr;
     gap: 0px;
-    margin: 48px 0 0 0;
+    margin: 42px 0 0 0;
   }
 
   main #container-canal {
