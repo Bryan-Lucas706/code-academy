@@ -40,7 +40,7 @@ botao.addEventListener("click", () => {
 // pesquisa lateral
 
 function mudouTamanho() {
-  if (window.innerWidth >= 963 || window.innerWidth < 630) {
+  if (window.innerWidth >= 972 || window.innerWidth < 630) {
     navLateral.style.display = "block";
   } else {
     navLateral.style.display = "none";
@@ -48,7 +48,7 @@ function mudouTamanho() {
 }
 
 function clickMenu() {
-  if (window.innerWidth <= 963 && window.innerWidth >= 630)
+  if (window.innerWidth <= 972 && window.innerWidth >= 630)
     if (navLateral.style.display == "block") {
       navLateral.style.display = "none";
     } else {
