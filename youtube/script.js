@@ -1,29 +1,25 @@
 const body = document.body;
 const menuIcon = document.getElementById("menuIcon");
 const youtube = document.getElementById("youtube");
-const botao = document.getElementById("botao-tema");
 const shorts = document.getElementById("shorts");
 const subscribe = document.getElementById("subscribe");
 const library = document.getElementById("library");
 const navLateral = document.getElementById("nav-lateral");
 const inscrevaSe = document.getElementById("inscrevaSe");
 
-// Persistência do tema
-const temasalvo = localStorage.getItem("tema");
-temaEscuro(temasalvo === "escuro");
+// Detectar preferência de tema do dispositivo
+const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Função para alternar entre tema claro e escuro
-function temaEscuro(tipo) {
-  if (tipo == true) {
+// Função para atualizar tema
+function aplicarTema(isDark) {
+  if (isDark) {
     body.classList.add("escuro");
-    botao.innerHTML = '<i class="fa-regular fa-sun"></i>';
     youtube.src = "image/Youtube-LogoDark.png";
     shorts.src = "image/shortsDark.png";
     subscribe.src = "image/subscribeDark.png";
     library.src = "image/libraryDark.png";
   } else {
     body.classList.remove("escuro");
-    botao.innerHTML = '<i class="fa-solid fa-moon"></i>';
     youtube.src = "image/Youtube-Logo.png";
     shorts.src = "image/shorts.png";
     subscribe.src = "image/subscribe.png";
@@ -31,10 +27,12 @@ function temaEscuro(tipo) {
   }
 }
 
-botao.addEventListener("click", () => {
-  const isescuro = body.classList.toggle("escuro");
-  temaEscuro(isescuro);
-  localStorage.setItem("tema", isescuro ? "escuro" : "claro");
+// Aplicar tema inicial baseado na preferência do dispositivo
+aplicarTema(prefersColorScheme.matches);
+
+// Detectar mudanças nas preferências do dispositivo
+prefersColorScheme.addEventListener("change", (e) => {
+  aplicarTema(e.matches);
 });
 
 // pesquisa lateral
@@ -48,7 +46,7 @@ function mudouTamanho() {
 }
 
 function clickMenu() {
-  if (window.innerWidth <= 972 && window.innerWidth >= 630)
+  if (window.innerWidth <= 972)
     if (navLateral.style.display == "block") {
       navLateral.style.display = "none";
     } else {
