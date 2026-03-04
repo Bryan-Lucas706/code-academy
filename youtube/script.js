@@ -43,18 +43,25 @@ prefersColorScheme.addEventListener("change", (e) => {
 function mudouTamanho() {
   if (window.innerWidth >= 972 || window.innerWidth < 630) {
     navLateral.style.display = "block";
+    popUp.style.display = "none";
+    overlay.style.display = "none";
   } else {
     navLateral.style.display = "none";
   }
 }
 
 function clickMenu() {
-  if (window.innerWidth <= 972)
+  if(window.innerWidth > 972){
+    
+  }
+  
+  if (window.innerWidth <= 972) {
     if (navLateral.style.display == "block") {
       navLateral.style.display = "none";
     } else {
       navLateral.style.display = "block";
     }
+  }
 }
 
 function clickModal() {

@@ -235,15 +235,11 @@ main #container-canal {
   border-radius: 30px;
   border: none;
 
-  animation-name: inscreva-se;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
+  animation: inscreva-se 0.4s forwards;
 }
 
 #container-canal button.inscrito {
-  animation-name: inscrito;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+  animation: inscrito 0.4s forwards;
 }
 
 #container-canal button:hover {
