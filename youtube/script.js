@@ -1,5 +1,8 @@
 const body = document.body;
 const menuIcon = document.getElementById("menuIcon");
+const modal = document.getElementById("modal");
+const popUp = document.getElementById("pop-up");
+const overlay = document.getElementById("overlay");
 const youtube = document.getElementById("youtube");
 const shorts = document.getElementById("shorts");
 const subscribe = document.getElementById("subscribe");
@@ -54,6 +57,15 @@ function clickMenu() {
     }
 }
 
+function clickModal() {
+  popUp.style.display = "flex";
+  overlay.style.display = "block";
+}
+function clickOverlay() {
+  popUp.style.display = "none";
+  overlay.style.display = "none";
+}
+
 let inscrito = false;
 
 if (localStorage.getItem("inscrito") === "true") {
@@ -79,3 +91,5 @@ function inscreverSe() {
 window.addEventListener("resize", mudouTamanho);
 inscrevaSe.addEventListener("click", inscreverSe);
 menuIcon.addEventListener("click", clickMenu);
+modal.addEventListener("click", clickModal);
+overlay.addEventListener("click", clickOverlay);

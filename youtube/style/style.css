@@ -1,26 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(animations.css);
 
-@keyframes inscreva-se {
-  from {
-    background-color: var(--fundo-principal);
-    color: var(--texto-principal);
-  }
-  to {
-    background-color: var(--texto-principal);
-    color: var(--fundo-secundario);
-  }
-}
-
-@keyframes inscrito {
-  from {
-    background-color: var(--texto-principal);
-    color: var(--fundo-principal);
-  }
-  to {
-    background-color: var(--fundo-secundario);
-    color: var(--texto-principal);
-  }
-}
 
 :root {
   --texto-principal: black;
@@ -72,7 +52,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 2;
 }
 
 header i {
@@ -449,4 +429,8 @@ a {
 
 #playlist2 .video:last-child {
   display: block;
+}
+
+#pop-up{
+  display: none;
 }

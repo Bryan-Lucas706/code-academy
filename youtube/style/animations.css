@@ -1,0 +1,21 @@
+@keyframes inscreva-se {
+  from {
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+  }
+  to {
+    background-color: var(--texto-principal);
+    color: var(--fundo-secundario);
+  }
+}
+
+@keyframes inscrito {
+  from {
+    background-color: var(--texto-principal);
+    color: var(--fundo-principal);
+  }
+  to {
+    background-color: var(--fundo-secundario);
+    color: var(--texto-principal);
+  }
+}
