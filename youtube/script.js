@@ -39,7 +39,6 @@ prefersColorScheme.addEventListener("change", (e) => {
 
 function mudouTamanho() {
   if (window.innerWidth >= 972 || window.innerWidth < 630) {
-    navLateral.style.display = "flex";
     popUp.style.display = "none";
     overlay.style.display = "none";
   } else {
