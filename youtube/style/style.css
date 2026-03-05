@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url(animations.css);
 
-
 :root {
   --texto-principal: black;
   --texto-claro: #606060;
@@ -141,13 +140,11 @@ nav#nav-lateral {
   background-color: var(--fundo-principal);
   height: 100%;
   position: fixed;
-  display: block;
   top: 56px;
-  font-size: 0.6em;
   padding: 3px;
 }
 
-#nav div {
+#nav span {
   position: relative;
   width: 60px;
   padding: 10px;
@@ -159,22 +156,75 @@ nav#nav-lateral {
   gap: 5px;
 }
 
-#nav div:hover {
-  cursor: pointer;
-  background-color: var(--hover);
+#nav span {
+  font-size: 0.6em;
 }
 
 nav i {
-  font-size: 1.7em;
+  font-size: 1.5em;
   color: var(--texto-principal);
+}
+
+nav img {
+  width: 25px;
 }
 
 nav #plus-circle {
   display: none;
 }
 
-nav img {
+nav span:hover {
+  cursor: pointer;
+  background-color: var(--hover);
+}
+
+#nav-lateral-grow {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  background-color: var(--fundo-principal);
+  width: 240px;
+  height: 100%;
+  left: 0;
+  z-index: 3;
+  font-size: 0.9em;
+
+  animation: NavGrow 0.4s forwards;
+}
+
+#nav-lateral-grow #nav-home,
+#nav-inscricoes,
+#nav-you {
+  display: inherit;
+  flex-direction: inherit;
+  padding: 10px;
+  border-bottom: 1px solid var(--borda);
+}
+
+#nav-lateral-grow .name-section {
+  font-size: 0.7em;
+  gap: 15px;
+}
+
+#nav-lateral-grow span {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  width: 100%;
+}
+
+#nav-lateral-grow span:hover {
+  background-color: var(--fundo-secundario);
+}
+
+#nav-lateral-grow #nav-inscricoes img {
   width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
 
 main {
@@ -427,6 +477,6 @@ a {
   display: block;
 }
 
-#pop-up{
+#pop-up {
   display: none;
 }

@@ -4,10 +4,9 @@ const modal = document.getElementById("modal");
 const popUp = document.getElementById("pop-up");
 const overlay = document.getElementById("overlay");
 const youtube = document.getElementById("youtube");
-const shorts = document.getElementById("shorts");
 const subscribe = document.getElementById("subscribe");
 const library = document.getElementById("library");
-const navLateral = document.getElementById("nav-lateral");
+const navLateralGrow = document.getElementById("nav-lateral-grow");
 const inscrevaSe = document.getElementById("inscrevaSe");
 
 // Detectar preferência de tema do dispositivo
@@ -18,13 +17,11 @@ function aplicarTema(isDark) {
   if (isDark) {
     body.classList.add("escuro");
     youtube.src = "image/Youtube-LogoDark.png";
-    shorts.src = "image/shortsDark.png";
     subscribe.src = "image/subscribeDark.png";
     library.src = "image/libraryDark.png";
   } else {
     body.classList.remove("escuro");
     youtube.src = "image/Youtube-Logo.png";
-    shorts.src = "image/shorts.png";
     subscribe.src = "image/subscribe.png";
     library.src = "image/library.png";
   }
@@ -42,24 +39,22 @@ prefersColorScheme.addEventListener("change", (e) => {
 
 function mudouTamanho() {
   if (window.innerWidth >= 972 || window.innerWidth < 630) {
-    navLateral.style.display = "block";
+    navLateral.style.display = "flex";
     popUp.style.display = "none";
     overlay.style.display = "none";
   } else {
-    navLateral.style.display = "none";
+    navLateralGrow.style.display = "none";
   }
 }
 
 function clickMenu() {
-  if(window.innerWidth > 972){
-    
-  }
-  
-  if (window.innerWidth <= 972) {
-    if (navLateral.style.display == "block") {
-      navLateral.style.display = "none";
+  if (window.innerWidth <= 972 || window.innerWidth >= 972) {
+    if (navLateralGrow.style.display == "flex") {
+      navLateralGrow.style.display = "none";
+      overlay.style.display = "none";
     } else {
-      navLateral.style.display = "block";
+      navLateralGrow.style.display = "flex";
+      overlay.style.display = "block";
     }
   }
 }
