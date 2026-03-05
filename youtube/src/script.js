@@ -2,7 +2,7 @@ const body = document.body;
 const menuIcon = document.getElementById("menuIcon");
 const showMore = document.getElementById("showMore");
 const moreChannels = document.getElementById("moreChannels");
-const modal = document.getElementById("modal");
+const options = document.getElementById("options");
 const popUp = document.getElementById("pop-up");
 const overlay = document.getElementById("overlay");
 const youtube = document.getElementById("youtube");
@@ -29,10 +29,11 @@ function ShowMoreChannels() {
   }
 }
 
-function clickModal() {
+function clickOptions() {
   popUp.style.display = "flex";
   overlay.style.display = "block";
 }
+
 function closeAll() {
   popUp.style.display = "none";
   overlay.style.display = "none";
@@ -61,12 +62,6 @@ function inscreverSe() {
   }
 }
 
-function changedSize() {
-  if (window.innerWidth > 630) {
-    closeAll();
-  }
-}
-
 // Detectar preferência de tema do dispositivo
 const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -89,9 +84,10 @@ prefersColorScheme.addEventListener("change", (e) => {
   aplicarTema(e.matches);
 });
 
-window.addEventListener("resize", changedSize);
-menuIcon.addEventListener("click", clickMenu);
 showMore.addEventListener("click", ShowMoreChannels);
 inscrevaSe.addEventListener("click", inscreverSe);
-modal.addEventListener("click", clickModal);
+
+menuIcon.addEventListener("click", clickMenu);
+options.addEventListener("click", clickOptions);
 overlay.addEventListener("click", closeAll);
+window.addEventListener("resize", closeAll);
