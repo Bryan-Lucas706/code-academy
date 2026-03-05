@@ -33,7 +33,7 @@
     grid-template-columns: 30px 1fr 30px;
   }
 
-  #container-canal,
+  #container-channel,
   #video-destaque,
   .nome-playlist {
     font-size: 0.8em;
@@ -120,50 +120,50 @@
     margin: 40px 0 0 0;
   }
 
-  main #container-canal {
+  main #container-channel {
     flex-direction: column;
     justify-content: space-between;
     padding-top: 10px;
     gap: 30px;
   }
 
-  #canal {
+  #channel {
     flex-direction: column;
     gap: 5px;
     text-align: center;
   }
 
-  #canal img {
+  #channel img {
     width: 80px;
     height: 80px;
   }
 
-  #canal span {
+  #channel span {
     display: none;
   }
 
-  #canal::after {
+  #channel::after {
     content: "💻 O Curso em Vídeo é um dos maiores canais educacionais do YouTube na área de programação! Criado pelo professor Gustavo Guanabara, oferece cursos gratuitos em formato de videoaulas para quem quer aprender tecnologia do zero.";
   }
 
-  #container-canal button {
+  #container-channel button {
     font-size: 1.2em;
     width: 100%;
   }
 
-  #nav-canal,
+  #nav-channel,
   #video-destaque,
   #playlist1,
   #playlist2 {
     border: none;
   }
 
-  #nav-canal a {
+  #nav-channel a {
     font-size: 2.4vw;
   }
 
-  #nav-canal i,
-  #nav-canal a:nth-last-child(-n + 3) {
+  #nav-channel i,
+  #nav-channel a:nth-last-child(-n + 3) {
     display: none;
   }
 

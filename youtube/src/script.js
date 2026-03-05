@@ -61,9 +61,9 @@ function inscreverSe() {
   }
 }
 
-function mudouTamanho() {
+function changedSize() {
   if (window.innerWidth > 630) {
-   closeAll()
+    closeAll();
   }
 }
 
@@ -89,7 +89,7 @@ prefersColorScheme.addEventListener("change", (e) => {
   aplicarTema(e.matches);
 });
 
-window.addEventListener("resize", mudouTamanho);
+window.addEventListener("resize", changedSize);
 menuIcon.addEventListener("click", clickMenu);
 showMore.addEventListener("click", ShowMoreChannels);
 inscrevaSe.addEventListener("click", inscreverSe);

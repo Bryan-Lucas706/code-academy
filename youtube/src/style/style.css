@@ -100,16 +100,12 @@ header #pesquisa {
   background-color: var(--fundo-secundario);
 }
 
-#barra button:hover {
-  background-color: var(--hover);
-}
-
 #pesquisa #mic {
   background-color: var(--fundo-secundario);
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  display: flex;
+  display: inherit;
   justify-content: center;
   align-items: center;
   margin-left: 20px;
@@ -121,7 +117,7 @@ header #pesquisa {
 
 header #perfil {
   width: 200px;
-  display: flex;
+  display: inherit;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -136,12 +132,10 @@ nav#nav-lateral {
   background-color: var(--fundo-principal);
   height: 100%;
   position: fixed;
-  top: 56px;
   padding: 3px;
 }
 
 #nav span {
-  position: relative;
   width: 60px;
   padding: 10px;
   border-radius: 10px;
@@ -178,6 +172,7 @@ nav span:hover {
   left: 0;
   z-index: 3;
   font-size: 0.9em;
+  
   overflow-y: auto;
   scrollbar-width: none;
 
@@ -248,7 +243,7 @@ main img {
   border-radius: 20px;
 }
 
-main #container-canal {
+main #container-channel {
   grid-row: 2 / 3;
   grid-column: 2 / -2;
   display: flex;
@@ -256,32 +251,32 @@ main #container-canal {
   align-items: center;
 }
 
-#canal {
+#channel {
   display: inherit;
   align-items: center;
   color: var(--texto-principal);
 }
 
-#canal img {
+#channel img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
 
-#info-canal {
+#info-channel {
   color: var(--texto-principal);
   margin-left: 20px;
 }
 
-#info-canal h1 {
+#info-channel h1 {
   font-size: 2.3em;
 }
 
-#info-canal span {
+#info-channel span {
   color: var(--texto-claro);
 }
 
-#container-canal button {
+#container-channel button {
   width: 110px;
   height: 40px;
   font-weight: bold;
@@ -293,15 +288,15 @@ main #container-canal {
   animation: inscreva-se 0.4s forwards;
 }
 
-#container-canal button.inscrito {
+#container-channel button.inscrito {
   animation: inscrito 0.4s forwards;
 }
 
-#container-canal button:hover {
+#container-channel button:hover {
   cursor: pointer;
 }
 
-#nav-canal {
+#nav-channel {
   height: 50px;
   grid-row: 3 / 4;
   grid-column: 2 / -2;
@@ -313,13 +308,13 @@ main #container-canal {
   border-bottom: 1px solid var(--hover);
 }
 
-#nav-canal a {
+#nav-channel a {
   padding: 10px;
   text-decoration: none;
   color: var(--texto-claro);
 }
 
-#nav-canal a:hover {
+#nav-channel a:hover {
   cursor: pointer;
   color: var(--texto-principal);
   border-bottom: 2px solid var(--texto-principal);
@@ -461,7 +456,7 @@ a {
   flex-direction: column;
 }
 
-.nome-video {
+.name-video {
   width: 100%;
   padding: 5px 0px;
   display: flex;
@@ -469,7 +464,7 @@ a {
   color: var(--texto-principal);
 }
 
-.video .nome-video i {
+.video .name-video i {
   padding-left: 5px;
   font-size: 1.3em;
 }
