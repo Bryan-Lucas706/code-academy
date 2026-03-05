@@ -1,60 +1,31 @@
 const body = document.body;
 const menuIcon = document.getElementById("menuIcon");
+const showMore = document.getElementById("showMore");
+const moreChannels = document.getElementById("moreChannels");
 const modal = document.getElementById("modal");
 const popUp = document.getElementById("pop-up");
 const overlay = document.getElementById("overlay");
 const youtube = document.getElementById("youtube");
-const subscribe = document.getElementById("subscribe");
-const library = document.getElementById("library");
 const navLateralGrow = document.getElementById("nav-lateral-grow");
 const inscrevaSe = document.getElementById("inscrevaSe");
 
-// Detectar preferência de tema do dispositivo
-const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-// Função para atualizar tema
-function aplicarTema(isDark) {
-  if (isDark) {
-    body.classList.add("escuro");
-    youtube.src = "image/Youtube-LogoDark.png";
-    subscribe.src = "image/subscribeDark.png";
-    library.src = "image/libraryDark.png";
-  } else {
-    body.classList.remove("escuro");
-    youtube.src = "image/Youtube-Logo.png";
-    subscribe.src = "image/subscribe.png";
-    library.src = "image/library.png";
-  }
-}
-
-// Aplicar tema inicial baseado na preferência do dispositivo
-aplicarTema(prefersColorScheme.matches);
-
-// Detectar mudanças nas preferências do dispositivo
-prefersColorScheme.addEventListener("change", (e) => {
-  aplicarTema(e.matches);
-});
-
 // pesquisa lateral
-
-function mudouTamanho() {
-  if (window.innerWidth >= 972 || window.innerWidth < 630) {
-    popUp.style.display = "none";
-    overlay.style.display = "none";
+function clickMenu() {
+  if (navLateralGrow.style.display === "none") {
+    navLateralGrow.style.display = "flex";
+    overlay.style.display = "block";
   } else {
-    navLateralGrow.style.display = "none";
+    closeAll();
   }
 }
 
-function clickMenu() {
-  if (window.innerWidth <= 972 || window.innerWidth >= 972) {
-    if (navLateralGrow.style.display == "flex") {
-      navLateralGrow.style.display = "none";
-      overlay.style.display = "none";
-    } else {
-      navLateralGrow.style.display = "flex";
-      overlay.style.display = "block";
-    }
+function ShowMoreChannels() {
+  if (moreChannels.style.display === "none") {
+    moreChannels.style.display = "block";
+    showMore.innerHTML = '<i class="fa-solid fa-angle-up"></i>Mostrar menos';
+  } else {
+    moreChannels.style.display = "none";
+    showMore.innerHTML = '<i class="fa-solid fa-angle-down"></i>Mostrar mais';
   }
 }
 
@@ -62,9 +33,10 @@ function clickModal() {
   popUp.style.display = "flex";
   overlay.style.display = "block";
 }
-function clickOverlay() {
+function closeAll() {
   popUp.style.display = "none";
   overlay.style.display = "none";
+  navLateralGrow.style.display = "none";
 }
 
 let inscrito = false;
@@ -89,8 +61,37 @@ function inscreverSe() {
   }
 }
 
+function mudouTamanho() {
+  if (window.innerWidth > 630) {
+   closeAll()
+  }
+}
+
+// Detectar preferência de tema do dispositivo
+const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Função para atualizar tema
+function aplicarTema(isDark) {
+  if (isDark) {
+    body.classList.add("escuro");
+    youtube.src = "image/Youtube-LogoDark.png";
+  } else {
+    body.classList.remove("escuro");
+    youtube.src = "image/Youtube-Logo.png";
+  }
+}
+
+// Aplicar tema inicial baseado na preferência do dispositivo
+aplicarTema(prefersColorScheme.matches);
+
+// Detectar mudanças nas preferências do dispositivo
+prefersColorScheme.addEventListener("change", (e) => {
+  aplicarTema(e.matches);
+});
+
 window.addEventListener("resize", mudouTamanho);
-inscrevaSe.addEventListener("click", inscreverSe);
 menuIcon.addEventListener("click", clickMenu);
+showMore.addEventListener("click", ShowMoreChannels);
+inscrevaSe.addEventListener("click", inscreverSe);
 modal.addEventListener("click", clickModal);
-overlay.addEventListener("click", clickOverlay);
+overlay.addEventListener("click", closeAll);

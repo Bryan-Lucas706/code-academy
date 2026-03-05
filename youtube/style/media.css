@@ -24,8 +24,8 @@
     top: 48px;
   }
 
-  #nav-lateral-grow{
-    display: none;
+  #nav-lateral-grow {
+    top: 48px;
   }
 
   main {
@@ -75,8 +75,8 @@
     width: 250px;
   }
 
-  #nome-canal {
-    font-size: 1.3em;
+  #name-channel {
+    font-size: 1.2em;
     color: var(--texto-principal);
   }
 
@@ -104,14 +104,13 @@
     font-size: 1.3em;
   }
 
-  nav img {
-    width: 32px;
+  nav #plus-circle {
+    display: block;
+    font-size: 1em;
   }
 
-  nav #plus-circle {
-    text-align: center;
-    display: block;
-    font-size: 2em;
+  #nav-lateral-grow {
+    display: none !important;
   }
 
   main {
@@ -160,7 +159,7 @@
   }
 
   #nav-canal a {
-    font-size: 0.7em;
+    font-size: 2.4vw;
   }
 
   #nav-canal i,
@@ -238,17 +237,6 @@
 
     animation: popUp 0.3s forwards;
   }
-
-  div#overlay {
-  display: none;
-  position: fixed;
-  background-color: #00000060;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
 
   #pop-up span {
     display: flex;
